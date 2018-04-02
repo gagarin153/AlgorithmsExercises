@@ -1,0 +1,135 @@
+{\rtf1\ansi\ansicpg1251\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Tahoma;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue171;}
+{\*\expandedcolortbl;;\cssrgb\c13333\c13333\c13333;\cssrgb\c100000\c100000\c72549;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 1.1.1 Give the value of each of the following expressions:\
+a. (0 + 15) / 2 \
+b. 2.0e-6 * 100000000.1\
+c. true && false || true && true\
+\
+Answer:\
+a. 7\
+b. 200.0000002\
+c. true\
+\
+1.1.2 Give the type and value of each of the following expressions:\
+a. (1 + 2.236) / 2\
+b. 1 + 2 + 3 + 4.0\
+c. 4.1 >= 4\
+d. 1 + 2 + "3"\
+\
+Answer:\
+a. 1.618, double\
+b. 10.0 double\
+c. true, boolean\
+d. 33, string\
+\
+1.1.4 What (if anything) is wrong with each  of the following statements?\
+a. if (a > b) then  c = 0 \
+b. if a > b \{ c = 0\}\
+c. if ( a > b) c = 0\
+d. if (a > b) c = 0 else b = 0 \
+\
+Answer:\
+a. Not a keyword "then", missing ; after initialization\
+b. Missing brackets, missing ; after initialization\
+c. Missing : after initialization\
+d. Missing : after initialization\
+\
+1.1.6 What does the following program print?\
+int f = 0;\
+int g = 1;\
+for(int i = 0; i <= 15; i++) \
+\{\
+	StdOut.println(f);\
+	f = f + g;\
+	g = f - g;\
+\}\
+\
+Answer:\
+\pard\pardeftab720\sl320\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://context.reverso.net/translation/english-russian/Fibonacci+numbers"}}{\fldrslt 
+\f1\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Fibonacci numbers}}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 0\
+1\
+1\
+2\
+3\
+5\
+8\
+13\
+21\
+34\
+55\
+89\
+144\
+233\
+377\
+610\
+\
+1.1.7 Give the value printed by each of the following code fragments:\
+a. double t = 9.0;\
+    while (Math.abs(t - 9.0/t) > 0.001)\
+	t = (9.0/t + t) / 2.0;\
+    StdOut.printf("%.5f\\n", t );\
+b. int sum = 0;\
+    for (int i = 1; i < 1000; i++)\
+	for(int j = 0; j < i; j++)\
+		sum++;\
+    StdOut.println(sum);\
+c. int sum = 0;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0     for (int i = 1; i < 1000; i *= 2)\
+	for(int j = 0; j < 1000; j++)\
+		sum++;\
+    StdOut.println(sum);\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 Answer:\
+a. 3.00009\
+b. 499500\
+c. 1023\
+\
+1.1.8 What does each of the following print?\
+a. System.out.println('b');\
+b. System.out.println('b' + 'c');\
+c. System.out.printl((char)('a' + 4 ));\
+\
+Answer:\
+a. b\
+b. 197\
+c. e\
+\
+1.1.12 What does the following code fragment print?\
+int[] a = new int[10];\
+for(int i = 0; i < 10; i++)\
+	a[i] = 9 - i;\
+for(int i = 0; i < 10; i++) \
+	a[i] = a[a[i]];\
+for (int i = 0; i < 10; i++) \
+	System.out.println(a[i]);\
+\
+Answer:\
+0\
+1\
+2\
+3\
+4\
+4\
+3\
+2\
+1\
+0\
+1.1.16 Give the value of exR1(6);\
+public static String exR1(int n) \{\
+	if (n <= 0) return '"";\
+	return exR1(n - 3) + n + exR1(n - 2) + n\
+\}\
+\
+Answer:\
+311361142246\
+}
