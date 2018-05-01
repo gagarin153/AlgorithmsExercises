@@ -11,7 +11,7 @@ public class Main {
     // and j a are relatively prime (have no common factors), and false otherwise.
     public static boolean cheackCommonFactors(int x, int y) {
         for (int i = 2; i <= y; i++) {
-            if (x % i == 0) {
+            if (x % i == 0 && y % i == 0) {
                 return true;
             }
         }
