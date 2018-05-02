@@ -39,7 +39,7 @@ public class Main {
         double p = StdIn.readDouble();
         Point[] points = new Point[numberOfpoint + 2];
         double radious = 10.0;
-        int stroke = 40 / numberOfpoint;
+        double stroke = 40.0 / numberOfpoint;
 
         int index = 0;
         for(double x = - radious; x <= radious; x += stroke) {
