@@ -13,10 +13,11 @@ class SmartDate {
     private final int month;
     private final int day;
     private final int year;
-    private String[] daysOfTheWeek = {" Saturday", "Sunday", "Monday", " Tuesday", " Wednesday", " Thursday", " Friday"};
+    private String[] daysOfTheWeek = {"Monday", " Tuesday", " Wednesday", " Thursday", " Friday", " Saturday", "Sunday"};
+    private int[] indexFirstDayOfTheMoth = {0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5};
 
     public SmartDate( int d, int m, int y) {
-        if (m < 1 || d < 1 & y < 1 || m > 12 || d > 31 || m == 2 && d > 29 || y < 2000 || y % 4 != 0 && m == 2 && d > 28) {
+        if (m < 1 || d < 1 || y < 1 || m > 12 || d > 31 || m == 2 && d > 29 || y < 2000 || y % 4 != 0 && m == 2 && d > 28) {
             throw new RuntimeException("IllegalArgumentException");
         }
         month = m;
@@ -41,49 +42,13 @@ class SmartDate {
     }
 
     public String dayOfTheWeek() {
-        int index = 0;
-
-        for (int i = 2001; i < year + 1; i++) {
-            if ((i - 1) % 4 == 0) {
-                index += 2;
-            } else {
-                index += 1;
-            }
-            if (index > 6) index -= 7;
-
+        int index = (year() % 4 == 0 && month() > 2) ? indexFirstDayOfTheMoth[month() - 1] + day() : indexFirstDayOfTheMoth[month() - 1] + day() - 1;
+        for (int i = 2002; i < year + 1 ; i++) {
+            if ((i - 1) % 4 == 0) index += 2;
+            else index += 1;
         }
-
-        for (int i = 1; i < month; i++) {
-            if (i < 8) {
-                if ((i % 2) != 0) {
-                    index += 3;
-                } else {
-                    if (i != 2) {
-                        index += 2;
-                    } else {
-                        if (year % 4 == 0) {
-                            index += 1;
-                        }
-                    }
-                }
-            } else {
-                if ((i % 2) == 0) {
-                    index += 3;
-                } else {
-                    index += 2;
-                }
-            }
-            if (index > 6) {
-                index -= 7;
-            }
-
-        }
-
-        for(int i = 1; i < day; i++) {
-            index++;
-            if(index > 6) {
-                index -= 7;
-            }
+        while(index >= 7) {
+            index -= 7;
         }
 
         return daysOfTheWeek[index];

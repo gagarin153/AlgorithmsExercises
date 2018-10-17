@@ -21,9 +21,9 @@ public class TestPoint2D {
 
         double min = points[0].distance(points[1]);
         for (int i = 0; i < points.length - 1; i++) {
-            for (int j = i; j < points.length - 1; j++) {
-                if (points[j].distance(points[j + 1]) < min) {
-                    min = points[j].distance(points[j + 1]);
+            for (int j = i + 1; j < points.length - 1; j++) {
+                if (points[i].distance(points[j]) < min) {
+                    min = points[i].distance(points[j]);
                 }
             }
         }

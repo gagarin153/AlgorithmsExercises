@@ -43,13 +43,12 @@ public class TestInterval2D {
         }
 
         for (int i = 0; i < intervals.length - 1; i++) {
-            for (int j = i; j < intervals.length - 1; j++) {
-                if (intervals[j].intersects(intervals[j + 1])) {
-                    StdOut.println(intervals[j] + " intersect " + intervals[j + 1]);
-
+            for (int j = i + 1; j < intervals.length - 1; j++) {
+                if (intervals[i].intersects(intervals[j])) {
+                    StdOut.println(intervals[i] + " intersect " + intervals[j]);
                 }
-                if (intervals[i].contains(points[i][0]) && intervals[i].contains(points[i][1])) {
-                    StdOut.println(intervals[j] + " contain " + intervals[j + 1]);
+                if (intervals[i].contains(points[j][0]) && intervals[i].contains(points[j][1])) {
+                    StdOut.println(intervals[i] + " contain " + intervals[j]);
                 }
             }
         }
